@@ -11,3 +11,22 @@ fs.readFile('./hello.txt', function(err, data){
 // 조각조각 노드 모듈이 설치된다. 우리가 설치한 모듈.
 // js에서 웹 모듈 설치. iml에 저장되어있었음.
 // 여기는 package.json에 저장됨
+
+var es5 = {
+   name: "kim1",
+   point: 100
+}
+
+// es6에서는 객체를 새로운 방법으로 선언할 수 있다.
+let es6 = new Object();
+es6.name = "kim2";
+es6.point = 100;
+
+console.log(`es5: ${es5.name}, ${es5.point} / es6: ${es6.name}, ${es6.point}`); // 필드에 의한 접근
+console.log(`es6: ${es6['name']}`); // 키에 의한 접근
+
+for(let item in es6){
+   console.log(`${item}: ${es6[item]}`);
+}
+
+// js파일 각각을 모듈화할 수 있다.

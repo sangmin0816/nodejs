@@ -18,3 +18,14 @@ console.log("hello~ NodeJs~")
 // node 명령어 쓰면 js01.js가 자동 실행된다.
 // 자바는 java c명령어로 컴파일 후 java로 실행했는데, 노드는 하나로 가능. 
 // 그런데 만약에 노드 js 폴더에 hello.txt 파일
+
+var a = 20; // 재선언 가능, 변수 값 변경 가능
+let b = 20; // 재선언 불가, 변수 값 변경 가능
+const c = 20; // 재선언 불가, 변수 값 변경 불가능
+console.log(a+" "+b+" "+c);
+console.log(`var a: ${a}, let b: ${b}, const c: ${c}`); // ` 백틱(backtick) 안에서 변수를 el처럼 사용 가능
+// 백틱으로 감싼 문장을 템플릿이라 한다. VUE, REACT도 동일하게 사용한다.
+
+var a = "재선언 가능";
+b = "변수 값 변경 가능";
+console.log(`var a: ${a}, let b: ${b}, const c:${c}`);
