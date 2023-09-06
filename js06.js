@@ -35,5 +35,9 @@ console.log(`${g} ${h} ${i}`); // G H I
 let {id, age, addr, tel} = member;
 console.log(`${id} ${age} ${addr} ${tel}`);
 
-// let {o1, o2, o3, o4} = {age: member.age, id:member.id, addr: member.addr, tel: member.tel};
-// console.log(`${o1} ${o2} ${o3} ${o4}`);
+let {o1, o2, o3, o4} = {o1: member.age, o2:member.id, o3: member.addr, o4: member.tel};
+console.log(`${o1} ${o2} ${o3} ${o4}`);
+
+let [q, w, ... rest] = [1, 2, 3, 4, 5, 6];
+console.log(`${q} ${w}`)
+console.log(`${rest}`)
