@@ -7,8 +7,18 @@
 </head>
 <body>
    <div class="container">
-      <h2>메인페이지</h2>
-      <p>메인페이지 하나하나 적기 귀찮아서 그냥 이렇게 했습니다. 만세~</p>
+      <nav>
+         <ul>
+            <li><a href="/?msg=link1">링크1</a></li>
+            <li><a href="/?msg=link2">링크2</a></li>
+            <li><a href="/?msg=link3">링크3</a></li>
+         </ul>
+      </nav>
+      <h2>What you Clicked: </h2>
+      <form action="/postTest" method="post">
+         <input type="text" name="msg" placeholder="write your message">
+         <input type="submit" value="submit">
+      </form>
    </div>
 </body>
 </html>
