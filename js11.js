@@ -1,5 +1,6 @@
 var test1 = [10, 15, 20, 30, 40, 50];
-console.log(test1.map(function(c){return c<=20}));
+console.log(test1.map(function(c){return c+5}));
+// [ 15, 20, 25, 35, 45, 55 ]
 console.log(test1.map(c => (c<=20)));
 console.log(test1.map(c => {return(c<=20);}));
 

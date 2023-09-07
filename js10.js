@@ -23,3 +23,6 @@ let tag = function(strings, ... rest){
 let str = tag`Hello ${title}
 Node.`
 console.log(str)
+
+let name = "sangmin";
+console.log(String.raw`Hello ${name}!`); // Hello sangmin!
