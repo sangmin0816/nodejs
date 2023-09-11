@@ -7,8 +7,15 @@ const HOST = "127.0.0.1";
 
 app.get("/", (req, res) => {
    // 스프링으로 따지면 request.mapping과 같다.
-   res.send("Hello Express World!");
-   res.end();
+   res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/about", (req, res) => {
+   res.sendFile(__dirname + "/about.html");
+});
+
+app.get("/contact", (req, res) => {
+   res.sendFile(__dirname + "/contact.html");
 });
 
 server.listen(PORT, HOST, () => {
