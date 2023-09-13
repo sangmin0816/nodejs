@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <%- include('../head.ejs') %>
+    <style>
+        input {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <%-include('../header.ejs') %>
+    <div class="container">
+        <form action="/sample/updatePro" method="post">
+            <% for(var i=0; i<samples.length; i++){%>
+            <input class="input" type="hidden" name="no" value="<%=samples[i].no%>">
+            <label for="name">Name</label>
+            <input class="input" type="text" name="NAME" value="<%=samples[i].NAME%>" required>
+            <input class="button" type="submit">
+            <%}%>
+        </form>
+    </div>
+
+</body>
+</html>

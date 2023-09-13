@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../head.ejs') %>
+    <title>Sample</title>
+</head>
+<body>
+    <%-include('../header.ejs') %>
+    <div class="container">
+        <% for(var i=0; i<samples.length; i++){%>
+        <h1 class="title">Sample Detail</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>no</td>
+                    <td>name</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%=samples[i].no%></td>
+                    <td><%=samples[i].NAME%></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/sample/update/<%=samples[i].no%>" class="button is-primary">Update</a>
+        <a href="/sample/delete/<%=samples[i].no%>" class="button is-danger">Delete</a>
+        <a href="/sample/list" class="button is-info">List</a>
+        <%}%>
+    </div>
+</body>
+</html>

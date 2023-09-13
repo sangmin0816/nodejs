@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../head.ejs') %>
+    <title>Sample</title>
+</head>
+<body>
+    <%-include('../header.ejs') %>
+
+    <div class="container">
+        <h1 class="title">Board List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>seq</td>
+                    <td>title</td>
+                    <td>regdate</td>
+                    <td>visited</td>
+                </tr>
+            </thead>
+            <tbody id="board-list">
+            </tbody>
+        </table>
+        <a href="/sample/add" class="button is-primary">Add</a>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: 'http://localhost:4000/board/list',
+            method: 'post',
+            dataType: 'json',
+            success: function(data){
+                let board = data.boards;
+                for(var i=0; i<board.length; i++){
+                    $("#board-list").append(`<tr><td>${board[i].seq}</td>
+                        <td><a href="/board/get${board[i].seq}">${board[i].title}</a></td>
+                        <td>${board[i].regdate}</td>
+                        <td>${board[i].visited}</td></tr>`);
+                }
+            }
+        });
+    });
+</script>
